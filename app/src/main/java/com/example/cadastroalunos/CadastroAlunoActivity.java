@@ -11,7 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintSet;
+import com.example.cadastroalunos.dao.AlunoDAO;
+import com.example.cadastroalunos.model.Aluno;
 import com.example.cadastroalunos.util.CpfMask;
+import com.example.cadastroalunos.util.Util;
 import com.google.android.material.snackbar.BaseTransientBottomBar;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -34,7 +37,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     private int vDia;
     private View dataSelecionada;
 
-    //private LinearLayout llPrincipal;
+    private LinearLayout lnPrincipal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         edDtNasc.setFocusable(false);
         edDtMatricula.setFocusable(false);
 
-        //llPrincipal = findViewById(R.id.llPrincipal);
+        lnPrincipal = findViewById(R.id.lnPrincipal);
 
         edCpfAluno.addTextChangedListener(CpfMask.insert(edCpfAluno));
 
@@ -66,21 +69,21 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         vAno = calendar.get(Calendar.YEAR);
     }
 
-    private void iniciaSpinners(){
+    private void iniciaSpinners() {
         spCursos = findViewById(R.id.spCursos);
         spPeriodo = findViewById(R.id.spPeriodo);
 
-        String cursos[] = new String[] {"Análise e Desenv. Sistemas",
-                                        "Administração",
-                                        "Ciências Contábeis",
-                                        "Direito",
-                                        "Farmácia",
-                                        "Nutrição"};
+        String cursos[] = new String[]{"Análise e Desenv. Sistemas",
+                "Administração",
+                "Ciências Contábeis",
+                "Direito",
+                "Farmácia",
+                "Nutrição"};
 
-        String periodos[] = new String[] {"1ª Série",
-                                          "2ª Série",
-                                          "3ª Série",
-                                          "4ª Série"};
+        String periodos[] = new String[]{"1ª Série",
+                "2ª Série",
+                "3ª Série",
+                "4ª Série"};
 
         ArrayAdapter adapterCursos = new ArrayAdapter(this, android.R.layout.simple_list_item_1, cursos);
 
@@ -90,9 +93,9 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         spPeriodo.setAdapter(adapterPeriodo);
 
         //Ação ao Selecionar o Item da Lista
-        /*
-        spPeriodo.setVisibility(View.GONE);
 
+        //spPeriodo.setVisibility(View.GONE);
+        /*
         spCursos.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -119,9 +122,9 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     }
 
     //Validação dos Campos
-    private void validaCampos(){
+    private void validaCampos() {
         //Valida o campo RA do Aluno
-        if (edRaAluno.getText().toString().isEmpty()){
+        if (edRaAluno.getText().toString().isEmpty()) {
             edRaAluno.setError("Informe o RA do Aluno");
             edRaAluno.requestFocus();
 
@@ -129,7 +132,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         }
 
         //Valida o campo Nome do Aluno
-        if (edNomeAluno.getText().toString().isEmpty()){
+        if (edNomeAluno.getText().toString().isEmpty()) {
             edNomeAluno.setError("Informe o Nome do Aluno");
             edNomeAluno.requestFocus();
 
@@ -137,7 +140,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         }
 
         //Valida o campo CPF do Aluno
-        if (edCpfAluno.getText().toString().isEmpty()){
+        if (edCpfAluno.getText().toString().isEmpty()) {
             edCpfAluno.setError("Informe o CPF do Aluno");
             edCpfAluno.requestFocus();
 
@@ -145,7 +148,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         }
 
         //Valida o campo Data de Nascimento do Aluno
-        if (edDtNasc.getText().toString().isEmpty()){
+        if (edDtNasc.getText().toString().isEmpty()) {
             edDtNasc.setError("Informe a Data de Nascimento do Aluno");
             edDtNasc.requestFocus();
 
@@ -153,11 +156,31 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         }
 
         //Valida o campo Data de Matricula do Aluno
-        if (edDtMatricula.getText().toString().isEmpty()){
+        if (edDtMatricula.getText().toString().isEmpty()) {
             edDtMatricula.setError("Informe a Data de Matricula do Aluno");
             edDtMatricula.requestFocus();
 
             return;
+        }
+
+        salvarAluno();
+    }
+
+    public void salvarAluno() {
+        Aluno aluno = new Aluno();
+        aluno.setRa(Integer.parseInt(edRaAluno.getText().toString()));
+        aluno.setNome(edNomeAluno.getText().toString());
+        aluno.setCpf(edCpfAluno.getText().toString());
+        aluno.setDtNasc(edDtNasc.getText().toString());
+        aluno.setDtMatricula(edDtMatricula.getText().toString());
+        aluno.setCurso(spCursos.getSelectedItem().toString());
+        aluno.setPeriodo(spPeriodo.getSelectedItem().toString());
+
+        if (AlunoDAO.salvar(aluno) > 0) {
+
+            finish();
+        } else {
+            Util.customSnakeBar(lnPrincipal, "Erro ao salvar o aluno (" + aluno.getNome() + ") verifique o log", 0);
         }
     }
 
@@ -216,8 +239,8 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     };
 
     private void atualizaData() {
-        TextInputEditText edit = (TextInputEditText)dataSelecionada;
-        edit.setText(new StringBuilder().append(padLeftZeros(String.valueOf(vDia), 2)).append("/").append(padLeftZeros(String.valueOf(vMes + 1), 2)).append("/").append(vAno));
+        TextInputEditText edit = (TextInputEditText) dataSelecionada;
+        edit.setText(new StringBuilder().append(Util.padLeftZeros(String.valueOf(vDia), 2)).append("/").append(Util.padLeftZeros(String.valueOf(vMes + 1), 2)).append("/").append(vAno));
     }
 
     @Override
@@ -225,7 +248,4 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         return new DatePickerDialog(this, setDatePicker, vAno, vMes, vDia);
     }
 
-    public static String padLeftZeros(String str, int n) {
-        return String.format("%1$" + n + "s", str).replace(' ', '0');
-    }
 }

@@ -11,4 +11,6 @@
     <string name="selecionePeriodo">Selecione o Período</string>
     <string name="limpar">Limpar</string>
     <string name="salvar">Salvar</string>
+    <string name="curso">Curso</string>
+    <string name="addAluno">Adicionar Aluno</string>
 </resources>

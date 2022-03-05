@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         tools:context=".CadastroAlunoActivity"
         android:orientation="vertical"
-        android:id="@+id/llPrincipal">
+        android:id="@+id/lnPrincipal">
 
     <!--?attr/ pega propriedade do elemento Pai-->
     <!--
