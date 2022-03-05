@@ -77,8 +77,10 @@ public class ListaAlunoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Util.customSnakeBar(lnLista, "Aluno salvo com sucesso !", 1);
-        atualizaListaAluno();
+        if (resultCode == RESULT_OK) {
 
+            Util.customSnakeBar(lnLista, "Aluno salvo com sucesso !", 1);
+            atualizaListaAluno();
+        }
     }
 }

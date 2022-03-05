@@ -177,7 +177,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         aluno.setPeriodo(spPeriodo.getSelectedItem().toString());
 
         if (AlunoDAO.salvar(aluno) > 0) {
-
+            setResult(RESULT_OK);
             finish();
         } else {
             Util.customSnakeBar(lnPrincipal, "Erro ao salvar o aluno (" + aluno.getNome() + ") verifique o log", 0);
