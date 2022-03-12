@@ -11,9 +11,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import com.example.cadastroalunos.dao.AlunoDAO;
 import com.example.cadastroalunos.dao.ProfessorDAO;
-import com.example.cadastroalunos.model.Aluno;
 import com.example.cadastroalunos.model.Professor;
 import com.example.cadastroalunos.util.CpfMask;
 import com.example.cadastroalunos.util.Util;
@@ -137,7 +135,7 @@ public class CadastroProfessorActivity extends AppCompatActivity {
             setResult(RESULT_OK);
             finish();
         } else {
-            Util.customSnakeBar(lnPrincipal, "Erro ao salvar o aluno (" + professor.getNome() + ") verifique o log", 0);
+            Util.customSnakeBar(lnPrincipal, "Erro ao salvar o Professor (" + professor.getNome() + ") verifique o log", 0);
         }
     }
 

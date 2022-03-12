@@ -11,6 +11,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.CadastroAlunos">
         <activity
+                android:name=".ListaProfessorActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".CadastroDisciplina"
                 android:exported="true"/>
         <activity
@@ -18,7 +21,7 @@
                 android:exported="true"/>
         <activity
                 android:name=".CadastroProfessorActivity"
-                android:exported="true" />
+                android:exported="true"/>
 
         <meta-data
                 android:name="DATABASE"
