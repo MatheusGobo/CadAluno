@@ -7,7 +7,7 @@ import java.util.Objects;
 
 public class Disciplina extends SugarRecord {
     private String nome;
-    private String raProfessor;
+    private int raProfessor;
 
     public Disciplina(){
 
@@ -34,11 +34,11 @@ public class Disciplina extends SugarRecord {
         this.nome = nome;
     }
 
-    public String getRaProfessor() {
+    public int getRaProfessor() {
         return raProfessor;
     }
 
-    public void setRaProfessor(String raProfessor) {
+    public void setRaProfessor(int raProfessor) {
         this.raProfessor = raProfessor;
     }
 

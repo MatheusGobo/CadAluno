@@ -50,4 +50,14 @@ public class ProfessorDAO {
             return false;
         }
     }
+
+    public static Professor retornaPorRA(int ra) {
+        try {
+            List<Professor> lista = Professor.find(Professor.class, "ra = ?", new String[]{String.valueOf(ra)}, "", "", "");
+            return lista.get(0);
+        } catch (Exception ex) {
+            Log.e("Erro", "Erro ao retornar professor com RA ("+ra+"): " + ex.getMessage());
+            return null;
+        }
+    }
 }

@@ -6,12 +6,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import com.example.cadastroalunos.dao.DisciplinaDAO;
 import com.example.cadastroalunos.dao.ProfessorDAO;
+import com.example.cadastroalunos.model.Disciplina;
 import com.example.cadastroalunos.model.Professor;
+import com.example.cadastroalunos.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
 import fr.ganfra.materialspinner.MaterialSpinner;
 
@@ -21,6 +24,7 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
 
     private TextInputEditText edNomeDisciplina;
     private MaterialSpinner spProfessor;
+    private LinearLayout lnDisciplina;
 
     List<Professor> lisPro = new ArrayList<>();
     Professor profSelecionado;
@@ -31,6 +35,7 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro_disciplina);
 
         edNomeDisciplina = findViewById(R.id.edNomeDisciplina);
+        lnDisciplina     = findViewById(R.id.lnDisciplina);
 
         iniciaSpinners();
     }
@@ -47,10 +52,10 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
         spProfessor.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-               if (position > 0) {
-                   profSelecionado = lisPro.get(position - 1);
+               if (position < 0) {
+                   profSelecionado = new Professor();
                }else {
-                   profSelecionado = null;
+                   profSelecionado = lisPro.get((int) (id) - 1);
                }
             }
 
@@ -102,11 +107,26 @@ public class CadastroDisciplinaActivity extends AppCompatActivity {
             return;
         }
 
-        if (profSelecionado == null) {
+        if (profSelecionado.getRa() <= 0) {
             spProfessor.setError("Informe o professor");
             spProfessor.requestFocus();
 
             return;
+        }
+
+        salvarAluno();
+    }
+
+    public void salvarAluno() {
+        Disciplina disciplina = new Disciplina();
+        disciplina.setNome(edNomeDisciplina.getText().toString());
+        disciplina.setRaProfessor(profSelecionado.getRa());
+
+        if (DisciplinaDAO.salvar(disciplina) > 0) {
+            setResult(RESULT_OK);
+            finish();
+        } else {
+            Util.customSnakeBar(lnDisciplina, "Erro ao salvar a disciplina (" + disciplina.getNome() + ") verifique o log", 0);
         }
     }
 

@@ -69,9 +69,6 @@ public class Professor extends SugarRecord {
 
     @Override
     public String toString() {
-        return "Professor{" +
-                "ra=" + ra +
-                ", nome='" + nome + '\'' +
-                '}';
+        return nome;
     }
 }

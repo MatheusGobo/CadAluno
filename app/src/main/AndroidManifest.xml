@@ -27,6 +27,9 @@
                 android:name=".ListaAlunoActivity"
                 android:exported="true"/>
         <activity
+                android:name=".ListaDisciplinaActivity"
+                android:exported="true"/>
+        <activity
                 android:name=".CadastroProfessorActivity"
                 android:exported="true"/>
 
@@ -35,7 +38,7 @@
                 android:value="cadastro_aluno.db"/>
         <meta-data
                 android:name="VERSION"
-                android:value="3"/>
+                android:value="1"/>
         <meta-data
                 android:name="QUERY_LOG"
                 android:value="true"/>
