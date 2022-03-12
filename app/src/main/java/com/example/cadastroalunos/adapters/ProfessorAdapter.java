@@ -34,8 +34,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.Prof
         holder.edRaProfessor     .setText(String.valueOf(professor.getRa()));
         holder.edCpfProfessor    .setText(professor.getCpf());
         holder.edNomeProfessor   .setText(professor.getNome());
-        holder.edPeriodo         .setText(professor.getPeriodo());
-        holder.edDtMatricula     .setText(professor.getDtMatricula());
         holder.edDtNascimento    .setText(professor.getDtNascimento());
     }
 
@@ -48,8 +46,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.Prof
         TextInputEditText edRaProfessor;
         TextInputEditText edNomeProfessor;
         TextInputEditText edCpfProfessor;
-        TextInputEditText edPeriodo;
-        TextInputEditText edDtMatricula;
         TextInputEditText edDtNascimento;
         public ProfessorViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -57,8 +53,6 @@ public class ProfessorAdapter extends RecyclerView.Adapter<ProfessorAdapter.Prof
             edRaProfessor      = (TextInputEditText)itemView.findViewById(R.id.edRaProfessorView);
             edNomeProfessor    = (TextInputEditText)itemView.findViewById(R.id.edNomeProfessorView);
             edCpfProfessor     = (TextInputEditText)itemView.findViewById(R.id.edCPFProfessorView);
-            edPeriodo          = (TextInputEditText)itemView.findViewById(R.id.edPeriodoProfessorView);
-            edDtMatricula      = (TextInputEditText)itemView.findViewById(R.id.edDtInscricaoProfessorView);
             edDtNascimento     = (TextInputEditText)itemView.findViewById(R.id.edDtNascimentoProfessorView);
         }
     }

@@ -3,7 +3,6 @@ package com.example.cadastroalunos.dao;
 import android.os.Build;
 import android.util.Log;
 import androidx.annotation.RequiresApi;
-import com.example.cadastroalunos.model.Aluno;
 import com.example.cadastroalunos.model.Professor;
 
 import java.util.ArrayList;
