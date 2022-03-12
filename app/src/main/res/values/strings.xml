@@ -19,4 +19,8 @@
     <string name="cadastrar_aluno">Cadastrar Aluno</string>
     <string name="lancar_notas">Lançar Notas</string>
     <string name="lancar_frequencias">Lançar Frequencias</string>
+    <string name="disciplina">Disciplina</string>
+    <string name="selecioneDisciplina">Selecione a Disciplina</string>
+    <string name="qtAlunos">Quantidade Alunos</string>
+    <string name="turma">Turma</string>
 </resources>
