@@ -14,10 +14,16 @@
                 android:name=".CadastroTurmaActivity"
                 android:exported="true"/>
         <activity
-                android:name=".CadastroDisciplina"
+                android:name=".CadastroDisciplinaActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".ListaProfessorActivity"
                 android:exported="true"/>
         <activity
                 android:name=".ListaAlunoActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".CadastroProfessorActivity"
                 android:exported="true"/>
 
         <meta-data

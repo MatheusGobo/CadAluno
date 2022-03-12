@@ -66,4 +66,12 @@ public class Professor extends SugarRecord {
     public int hashCode() {
         return Objects.hash(ra);
     }
+
+    @Override
+    public String toString() {
+        return "Professor{" +
+                "ra=" + ra +
+                ", nome='" + nome + '\'' +
+                '}';
+    }
 }
