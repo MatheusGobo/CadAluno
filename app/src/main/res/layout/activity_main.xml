@@ -9,6 +9,16 @@
         android:orientation="vertical"
         android:padding="10dp"
         >
+    <Button
+            android:id="@+id/cadastroProfessor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/cadastrar_professor"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
 
     <Button
             android:id="@+id/cadastroDisciplina"
@@ -16,17 +26,6 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/cadastrar_disciplina"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black"
-            android:shadowRadius="@integer/material_motion_duration_medium_1"
-    />
-
-    <Button
-            android:id="@+id/cadastroProfessor"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableRight="@mipmap/ic_cadastro"
-            android:text="@string/cadastrar_professor"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
