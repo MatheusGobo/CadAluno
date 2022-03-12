@@ -1,10 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".CadastroDisciplina">
+        tools:context=".CadastroDisciplinaActivity"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!--Campo de RA-->
+    <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/disciplina"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+        <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edNomeDisciplina"
+                android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--Campo de Cursos-->
+    <fr.ganfra.materialspinner.MaterialSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/spProfessor"
+            app:ms_arrowColor="?attr/colorPrimary"
+            app:ms_arrowSize="14dp"
+            app:ms_floatingLabelText="@string/professor"
+            app:ms_hint="@string/selecioneProfessor"
+            app:ms_multiline="false"/>
+
+
+</LinearLayout>

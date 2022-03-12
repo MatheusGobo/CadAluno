@@ -17,4 +17,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListaAlunoActivity.class);
         startActivity(intent);
     }
+
+
+    public void cadastroDisciplina(View view) {
+        Intent intent = new Intent(this, CadastroDisciplinaActivity.class);
+        startActivity(intent);
+    }
 }

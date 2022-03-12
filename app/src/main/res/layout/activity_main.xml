@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/cadastrar_professor"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
     />
@@ -26,9 +26,10 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/cadastrar_disciplina"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
+            android:onClick="cadastroDisciplina"
     />
 
     <Button
@@ -37,7 +38,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/cadastrar_turma"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
     />
@@ -48,7 +49,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/cadastrar_aluno"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
     />
@@ -59,7 +60,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/lancar_notas"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
     />
@@ -70,7 +71,7 @@
             android:layout_height="wrap_content"
             android:drawableRight="@mipmap/ic_cadastro"
             android:text="@string/lancar_frequencias"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
     />
