@@ -22,4 +22,5 @@
     <string name="selecioneProfessor">Selecione o Professor</string>
     <string name="professor">Professor</string>
     <string name="disciplina">Disciplina</string>
+    <string name="dtContratacao">Dt. Contratacao</string>
 </resources>

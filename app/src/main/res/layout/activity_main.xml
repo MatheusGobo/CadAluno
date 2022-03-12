@@ -18,6 +18,7 @@
             android:backgroundTint="@color/cardview_shadow_end_color"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
+            android:onClick="cadastroProfessor"
     />
 
     <Button
