@@ -7,13 +7,79 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity"
         android:orientation="vertical"
-        android:gravity="center">
+        android:padding="10dp"
+        >
 
-    <ImageView
-            android:layout_width="wrap_content"
+    <Button
+            android:id="@+id/cadastroDisciplina"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_cad_aluno"
-            android:elevation="30dp"
-            android:onClick="cadastroAluno"/>
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/cadastrar_disciplina"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
+
+    <Button
+            android:id="@+id/cadastroProfessor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/cadastrar_professor"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
+
+    <Button
+            android:id="@+id/cadastroTurma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/cadastrar_turma"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
+
+    <Button
+            android:id="@+id/cadastroAluno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/cadastrar_aluno"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
+
+    <Button
+            android:id="@+id/lancarNotas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/lancar_notas"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
+
+    <Button
+            android:id="@+id/lancarFrequencias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_cadastro"
+            android:text="@string/lancar_frequencias"
+            android:backgroundTint="@color/white"
+            android:textColor="@color/black"
+            android:shadowRadius="@integer/material_motion_duration_medium_1"
+    />
+
+
+
+
+
+
 
 </LinearLayout>

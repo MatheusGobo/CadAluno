@@ -13,4 +13,10 @@
     <string name="salvar">Salvar</string>
     <string name="curso">Curso</string>
     <string name="addAluno">Adicionar Aluno</string>
+    <string name="cadastrar_disciplina">Cadastrar Disciplina</string>
+    <string name="cadastrar_professor">Cadastrar Professor</string>
+    <string name="cadastrar_turma">Cadastrar Turma</string>
+    <string name="cadastrar_aluno">Cadastrar Aluno</string>
+    <string name="lancar_notas">Lançar Notas</string>
+    <string name="lancar_frequencias">Lançar Frequencias</string>
 </resources>
