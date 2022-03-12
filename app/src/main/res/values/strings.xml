@@ -26,4 +26,16 @@
     <string name="selecioneProfessor">Selecione o Professor</string>
     <string name="professor">Professor</string>
     <string name="dtContratacao">Dt. Contratacao</string>
+    <string name="title_activity_lista_turma">ListaTurmaActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="regime">Regime</string>
+    <string name="listaTurma">Lista de Turmas</string>
+    <string name="selecioneRegime">Selecione o Regime</string>
 </resources>

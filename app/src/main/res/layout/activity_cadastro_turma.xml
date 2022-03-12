@@ -27,52 +27,51 @@
                 <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/edNomeTurma"
-                        android:focusable="false"/>
+                        android:id="@+id/edNomeTurma"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--Linear de Período-->
-            <LinearLayout
+            <!--Campo de Período-->
+            <fr.ganfra.materialspinner.MaterialSpinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-                <!--Campo de Período-->
-                <fr.ganfra.materialspinner.MaterialSpinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:id="@+id/spPeriodoTurma"
-                        app:ms_arrowColor="?attr/colorPrimary"
-                        app:ms_arrowSize="14dp"
-                        app:ms_floatingLabelText="@string/periodo"
-                        app:ms_hint="@string/selecionePeriodo"
-                        app:ms_multiline="false"/>
-            </LinearLayout>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/spPeriodoTurma"
+                    app:ms_arrowColor="?attr/colorPrimary"
+                    app:ms_arrowSize="14dp"
+                    app:ms_floatingLabelText="@string/periodo"
+                    app:ms_hint="@string/selecionePeriodo"
+                    app:ms_multiline="false"/>
 
-            <!--Linear de Disciplina-->
-            <LinearLayout
+            <!--Campo de Disciplina-->
+            <fr.ganfra.materialspinner.MaterialSpinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="5dp">
-                <!--Campo de Disciplina-->
-                <fr.ganfra.materialspinner.MaterialSpinner
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:id="@+id/spDisciplinaTurma"
-                        app:ms_arrowColor="?attr/colorPrimary"
-                        app:ms_arrowSize="14dp"
-                        app:ms_floatingLabelText="@string/disciplina"
-                        app:ms_hint="@string/selecioneDisciplina"
-                        app:ms_multiline="false"/>
-            </LinearLayout>
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/spDisciplinaTurma"
+                    app:ms_arrowColor="?attr/colorPrimary"
+                    app:ms_arrowSize="14dp"
+                    app:ms_floatingLabelText="@string/disciplina"
+                    app:ms_hint="@string/selecioneDisciplina"
+                    app:ms_multiline="false"/>
 
+
+            <!--Campo de Regime-->
+            <fr.ganfra.materialspinner.MaterialSpinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/spRegime"
+                    app:ms_arrowColor="?attr/colorPrimary"
+                    app:ms_arrowSize="14dp"
+                    app:ms_floatingLabelText="@string/regime"
+                    app:ms_hint="@string/selecioneRegime"
+                    app:ms_multiline="false"/>
 
             <!--Campo de Quantidade de Alunos-->
             <com.google.android.material.textfield.TextInputLayout
@@ -84,7 +83,6 @@
                         android:layout_width="359dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/edQtAlunos"
-                        android:focusable="false"
                         android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

@@ -36,10 +36,10 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.TurmaViewHol
     @Override
     public void onBindViewHolder(@NonNull TurmaAdapter.TurmaViewHolder holder, int position) {
         Turma turma = listaTurmas.get(position);
-        holder.edNomeTurma       .setText(String.valueOf(turma.getNome()));
+        holder.edNomeTurma       .setText(turma.getNome());
         holder.edPeriodoTurma    .setText(turma.getPeriodo());
         holder.edDisciplinaTurma .setText(turma.getDisciplina());
-        holder.edQtAlunosTurma   .setText(turma.getQtAlunos());
+        holder.edQtAlunosTurma   .setText(String.valueOf(turma.getQtAlunos()));
     }
 
 

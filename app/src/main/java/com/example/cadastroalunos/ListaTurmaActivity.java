@@ -1,6 +1,7 @@
 package com.example.cadastroalunos;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -8,45 +9,45 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.cadastroalunos.adapters.ProfessorAdapter;;
-import com.example.cadastroalunos.dao.ProfessorDAO;
-import com.example.cadastroalunos.model.Professor;
+import com.example.cadastroalunos.adapters.TurmaAdapter;
+import com.example.cadastroalunos.dao.TurmaDAO;
+import com.example.cadastroalunos.model.Turma;
 import com.example.cadastroalunos.util.Util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListaProfessorActivity extends AppCompatActivity {
+public class ListaTurmaActivity extends AppCompatActivity {
 
-    private RecyclerView rvListaProfessor;
+
+    private RecyclerView rvListaTurma;
     private LinearLayout lnLista;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_professor);
 
-        lnLista = findViewById(R.id.lnListaProfessor);
+        setContentView(R.layout.activity_lista_turma);
 
-        atualizaListaProfessor();
+        lnLista = findViewById(R.id.lnListaTurma);
+
+        atualizaListaTurma();
     }
 
-    public void atualizaListaProfessor() {
-        List<Professor> listaProfessor = new ArrayList<>();
+    public void atualizaListaTurma() {
+        List<Turma> listaTurma = new ArrayList<>();
 
-        listaProfessor = ProfessorDAO.retornaProfessor("", new String[]{}, "nome asc");
+        listaTurma = TurmaDAO.retornaTurma("", new String[]{}, "nome asc");
 
-        rvListaProfessor = (RecyclerView) findViewById(R.id.rvListaProfessor);
+        rvListaTurma = (RecyclerView) findViewById(R.id.rvListaTurma);
 
-        ProfessorAdapter adapter = new ProfessorAdapter(listaProfessor, this);
+        TurmaAdapter adapter = new TurmaAdapter(listaTurma, this);
 
         LinearLayoutManager llm = new LinearLayoutManager(this);
-        rvListaProfessor.setLayoutManager(llm);
-        rvListaProfessor.setAdapter(adapter);
+        rvListaTurma.setLayoutManager(llm);
+        rvListaTurma.setAdapter(adapter);
     }
 
     @Override
@@ -61,7 +62,7 @@ public class ListaProfessorActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.mn_add:
 
-                abrirCadastroProfessor();
+                abrirCadastroTurma();
 
                 return true;
             default:
@@ -69,8 +70,8 @@ public class ListaProfessorActivity extends AppCompatActivity {
         }
     }
 
-    private void abrirCadastroProfessor() {
-        Intent intent = new Intent(this, CadastroProfessorActivity.class);
+    private void abrirCadastroTurma() {
+        Intent intent = new Intent(this, CadastroTurmaActivity.class);
         startActivityForResult(intent, 1);
     }
 
@@ -79,8 +80,8 @@ public class ListaProfessorActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-            Util.customSnakeBar(lnLista, "Professor salvo com sucesso !", 1);
-            atualizaListaProfessor();
+            Util.customSnakeBar(lnLista, "Turma salva com sucesso !", 1);
+            atualizaListaTurma();
         }
     }
 }

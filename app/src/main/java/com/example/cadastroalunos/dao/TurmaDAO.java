@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class TumaDAO {
+public class TurmaDAO {
     public static long salvar(Turma turma){
         try{
             return turma.save();
@@ -31,7 +31,7 @@ public class TumaDAO {
         }
     }
 
-    public static List<Turma> retornaProfessor(String where, String[] whereArgs, String orderBy){
+    public static List<Turma> retornaTurma(String where, String[] whereArgs, String orderBy){
         List<Turma> list = new ArrayList<>();
         try {
             list = Turma.find(Turma.class,where,whereArgs,"",orderBy,"");
