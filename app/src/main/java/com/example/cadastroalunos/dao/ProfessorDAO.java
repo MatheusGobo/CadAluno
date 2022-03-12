@@ -14,7 +14,7 @@ public class ProfessorDAO {
         try{
             return professor.save();
         }catch (Exception ex){
-            Log.e("Erro", "Erro ao salvar o aluno: "+ex.getMessage());
+            Log.e("Erro", "Erro ao salvar o Professor: "+ex.getMessage());
             return -1;
         }
     }
@@ -46,7 +46,7 @@ public class ProfessorDAO {
             professor.delete();
             return true;
         }catch (Exception ex){
-            Log.e("Erro","Erro ao excluir o professor: "+ex.getMessage());
+            Log.e("Erro","Erro ao excluir o professor: " + ex.getMessage());
             return false;
         }
     }

@@ -32,10 +32,12 @@ public class ListaProfessorActivity extends AppCompatActivity {
 
         lnLista = findViewById(R.id.lnListaProfessor);
 
+        atualizaListaProfessor();
     }
 
     public void atualizaListaProfessor() {
         List<Professor> listaProfessor = new ArrayList<>();
+
         listaProfessor = ProfessorDAO.retornaProfessor("", new String[]{}, "nome asc");
 
         rvListaProfessor = (RecyclerView) findViewById(R.id.rvListaProfessor);
@@ -77,7 +79,6 @@ public class ListaProfessorActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (resultCode == RESULT_OK) {
-
             Util.customSnakeBar(lnLista, "Professor salvo com sucesso !", 1);
             atualizaListaProfessor();
         }
