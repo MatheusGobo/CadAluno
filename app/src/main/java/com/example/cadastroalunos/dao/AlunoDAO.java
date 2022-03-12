@@ -38,6 +38,8 @@ public class AlunoDAO {
         return list;
     }
 
+
+
     public static boolean delete (Aluno aluno) {
         try {
             return Aluno.delete(aluno);
@@ -46,5 +48,6 @@ public class AlunoDAO {
             return false;
         }
     }
+
 
 }

@@ -10,13 +10,10 @@ import android.widget.*;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import androidx.constraintlayout.widget.ConstraintSet;
 import com.example.cadastroalunos.dao.AlunoDAO;
 import com.example.cadastroalunos.model.Aluno;
 import com.example.cadastroalunos.util.CpfMask;
 import com.example.cadastroalunos.util.Util;
-import com.google.android.material.snackbar.BaseTransientBottomBar;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import fr.ganfra.materialspinner.MaterialSpinner;
 
@@ -88,6 +85,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         ArrayAdapter adapterCursos = new ArrayAdapter(this, android.R.layout.simple_list_item_1, cursos);
 
         ArrayAdapter adapterPeriodo = new ArrayAdapter(this, android.R.layout.simple_list_item_1, periodos);
+
 
         spCursos.setAdapter(adapterCursos);
         spPeriodo.setAdapter(adapterPeriodo);

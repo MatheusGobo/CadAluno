@@ -23,4 +23,10 @@
     <string name="professor">Professor</string>
     <string name="disciplina">Disciplina</string>
     <string name="dtContratacao">Dt. Contratacao</string>
+    <string name="Aluno">Aluno</string>
+    <string name="selecionealuno">Selecione o Aluno</string>
+    <string name="nota">Nota</string>
+    <string name="dtLancamento">Data Lancamento</string>
+    <string name="selecionRegime">Selecione o regime</string>
+    <string name="regime">Regime</string>
 </resources>

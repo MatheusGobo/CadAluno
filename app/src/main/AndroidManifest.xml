@@ -11,6 +11,9 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.CadastroAlunos">
         <activity
+                android:name=".CadastroNotas"
+                android:exported="true"/>
+        <activity
                 android:name=".CadastroDisciplinaActivity"
                 android:exported="true"/>
         <activity
@@ -22,7 +25,6 @@
         <activity
                 android:name=".CadastroProfessorActivity"
                 android:exported="true"/>
-
         <meta-data
                 android:name="DATABASE"
                 android:value="cadastro_aluno.db"/>
