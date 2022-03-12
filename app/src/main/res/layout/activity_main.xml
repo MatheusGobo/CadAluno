@@ -9,6 +9,7 @@
         android:orientation="vertical"
         android:padding="10dp"
         >
+
     <Button
             android:id="@+id/cadastroProfessor"
             android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
+            android:onClick="cadastroTurma"
     />
 
     <Button

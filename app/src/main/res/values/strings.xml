@@ -19,14 +19,32 @@
     <string name="cadastrar_aluno">Cadastrar Aluno</string>
     <string name="lancar_notas">Lançar Notas</string>
     <string name="lancar_frequencias">Lançar Frequencias</string>
+    <string name="disciplina">Disciplina</string>
+    <string name="selecioneDisciplina">Selecione a Disciplina</string>
+    <string name="qtAlunos">Quantidade Alunos</string>
+    <string name="turma">Turma</string>
     <string name="selecioneProfessor">Selecione o Professor</string>
     <string name="professor">Professor</string>
-    <string name="disciplina">Disciplina</string>
     <string name="dtContratacao">Dt. Contratacao</string>
+<<<<<<< HEAD
     <string name="Aluno">Aluno</string>
     <string name="selecionealuno">Selecione o Aluno</string>
     <string name="nota">Nota</string>
     <string name="dtLancamento">Data Lancamento</string>
     <string name="selecionRegime">Selecione o regime</string>
     <string name="regime">Regime</string>
+=======
+    <string name="title_activity_lista_turma">ListaTurmaActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="regime">Regime</string>
+    <string name="listaTurma">Lista de Turmas</string>
+    <string name="selecioneRegime">Selecione o Regime</string>
+>>>>>>> c44dbdd18910fd02ec117d23c5c373a6f7ce7f90
 </resources>

@@ -12,6 +12,14 @@
             android:theme="@style/Theme.CadastroAlunos">
         <activity
                 android:name=".CadastroNotas"
+                android:exported="true"
+        />
+        <activity
+                android:name=".ListaTurmaActivity"
+                android:exported="true"
+                android:label="@string/listaTurma"/>
+        <activity
+                android:name=".CadastroTurmaActivity"
                 android:exported="true"/>
         <activity
                 android:name=".CadastroDisciplinaActivity"
@@ -21,6 +29,9 @@
                 android:exported="true"/>
         <activity
                 android:name=".ListaAlunoActivity"
+                android:exported="true"/>
+        <activity
+                android:name=".ListaDisciplinaActivity"
                 android:exported="true"/>
         <activity
                 android:name=".CadastroProfessorActivity"
@@ -37,13 +48,13 @@
         <meta-data
                 android:name="DOMAIN_PACKAGE_NAME"
                 android:value="com.example.cadastroalunos.model"/>
-
         <activity
                 android:name=".CadastroAlunoActivity"
                 android:exported="true"/>
         <activity
                 android:name=".MainActivity"
                 android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

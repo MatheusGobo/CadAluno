@@ -17,6 +17,7 @@ import com.example.cadastroalunos.util.CpfMask;
 import com.example.cadastroalunos.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
 ;import java.util.Calendar;
+import java.util.List;
 
 public class CadastroProfessorActivity extends AppCompatActivity {
 
@@ -95,6 +96,16 @@ public class CadastroProfessorActivity extends AppCompatActivity {
             edRaProfessor.requestFocus();
 
             return;
+        } else {
+            Professor profExist = ProfessorDAO.retornaPorRA(Integer.parseInt(edRaProfessor.getText().toString()));
+            if (profExist != null) {
+                if (profExist.getRa() > 0) {
+                    edRaProfessor.setError("Ra já cadatrado para o professor: " + profExist.getNome());
+                    edRaProfessor.requestFocus();
+
+                    return;
+                }
+            }
         }
 
         //Valida o campo Nome do Aluno

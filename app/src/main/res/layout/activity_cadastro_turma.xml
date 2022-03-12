@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="10dp">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cvTurma"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+        <!--Linear de Fora-->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+            <!--Campo de Nome-->
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/nome"
+                    android:layout_margin="5dp">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edNomeTurma"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--Campo de Período-->
+            <fr.ganfra.materialspinner.MaterialSpinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/spPeriodoTurma"
+                    app:ms_arrowColor="?attr/colorPrimary"
+                    app:ms_arrowSize="14dp"
+                    app:ms_floatingLabelText="@string/periodo"
+                    app:ms_hint="@string/selecionePeriodo"
+                    app:ms_multiline="false"/>
+
+            <!--Campo de Disciplina-->
+            <fr.ganfra.materialspinner.MaterialSpinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/spDisciplinaTurma"
+                    app:ms_arrowColor="?attr/colorPrimary"
+                    app:ms_arrowSize="14dp"
+                    app:ms_floatingLabelText="@string/disciplina"
+                    app:ms_hint="@string/selecioneDisciplina"
+                    app:ms_multiline="false"/>
+
+
+            <!--Campo de Regime-->
+            <fr.ganfra.materialspinner.MaterialSpinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:id="@+id/spRegime"
+                    app:ms_arrowColor="?attr/colorPrimary"
+                    app:ms_arrowSize="14dp"
+                    app:ms_floatingLabelText="@string/regime"
+                    app:ms_hint="@string/selecioneRegime"
+                    app:ms_multiline="false"/>
+
+            <!--Campo de Quantidade de Alunos-->
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/qtAlunos"
+                    android:layout_marginLeft="5dp">
+                <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="359dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/edQtAlunos"
+                        android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

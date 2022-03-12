@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CadastroDisciplinaActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/lnDisciplina">
 
     <!--Campo de RA-->
     <com.google.android.material.textfield.TextInputLayout
@@ -19,8 +20,7 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/edNomeDisciplina"
-                android:inputType="number"/>
+                android:id="@+id/edNomeDisciplina"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--Campo de Cursos-->
