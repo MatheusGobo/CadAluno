@@ -15,6 +15,7 @@ import android.os.Bundle;
 import com.example.cadastroalunos.dao.DisciplinaDAO;
 import com.example.cadastroalunos.dao.TurmaDAO;
 import com.example.cadastroalunos.model.Disciplina;
+import com.example.cadastroalunos.model.Professor;
 import com.example.cadastroalunos.model.Turma;
 import com.example.cadastroalunos.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
@@ -28,6 +29,7 @@ public class CadastroTurmaActivity extends AppCompatActivity {
     private TextInputEditText edNomeTurma;
     private TextInputEditText edDisciplinaTurma;
     private TextInputEditText edPeriodoTurma;
+    private TextInputEditText edRegimeTurma;
     private TextInputEditText edQtAlunos;
     private MaterialSpinner   spRegime;
     private MaterialSpinner   spDisciplina;
@@ -46,6 +48,7 @@ public class CadastroTurmaActivity extends AppCompatActivity {
         edNomeTurma       = findViewById(R.id.edNomeTurma);
         edDisciplinaTurma = findViewById(R.id.edDisciplinaTurma);
         edPeriodoTurma    = findViewById(R.id.edPeriodoTurma);
+        edRegimeTurma     = findViewById(R.id.edRegimeTurma);
         edQtAlunos        = findViewById(R.id.edQtAlunos);
 
         lnPrincipal = findViewById(R.id.lnPrincipal);
@@ -78,10 +81,10 @@ public class CadastroTurmaActivity extends AppCompatActivity {
         spDisciplina.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position > 0) {
-                    disciplinaSelecionada = lisDisc.get(position - 1);
+                if (position < 0) {
+                    disciplinaSelecionada = new Disciplina();
                 }else {
-                    disciplinaSelecionada = null;
+                    disciplinaSelecionada = lisDisc.get((int) (id) - 1);
                 }
             }
 
@@ -130,6 +133,7 @@ public class CadastroTurmaActivity extends AppCompatActivity {
 
         spDisciplina = findViewById(R.id.spDisciplinaTurma);
         spPeriodo    = findViewById(R.id.spPeriodoTurma);
+        spRegime     = findViewById(R.id.spRegime);
 
         if (edNomeTurma.getText().toString().isEmpty()) {
             edNomeTurma.setError("Informe o Nome da Turma");
@@ -146,15 +150,13 @@ public class CadastroTurmaActivity extends AppCompatActivity {
             errorText.requestFocus();
             return;
         }
-/*
-        if (spDisciplina.getSelectedItem() == null){
-            TextView errorText = (TextView)spDisciplina.getSelectedView();
-            errorText.setError("Informe a Disciplina!");
-            errorText.setTextColor(Color.RED);
-            errorText.setText("Informe a Disciplina!");
-            errorText.requestFocus();
+
+        if (disciplinaSelecionada.getNome().length() <= 0){
+            spDisciplina.setError("Informe a Disciplina");
+            spDisciplina.requestFocus();
+
             return;
-        }*/
+        }
 
         if (edQtAlunos.getText().toString().isEmpty()) {
             edQtAlunos.setError("Informe a quantidade de Alunos na Turma");
@@ -171,7 +173,7 @@ public class CadastroTurmaActivity extends AppCompatActivity {
         turma.setPeriodo(spPeriodo.getSelectedItem().toString());
         turma.setQtAlunos(Integer.parseInt(edQtAlunos.getText().toString()));
         turma.setRegime(spRegime.getSelectedItem().toString());
-        //turma.setDisciplina(spDisciplina.getSelectedItem().toString());
+        turma.setDisciplina(disciplinaSelecionada.getNome());
 
         if (TurmaDAO.salvar(turma) > 0) {
             setResult(RESULT_OK);

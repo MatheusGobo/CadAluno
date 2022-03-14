@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.cadastroalunos.model.Disciplina;
+import com.example.cadastroalunos.model.Professor;
 
 public class DisciplinaDAO {
     public static long salvar(Disciplina disciplina){
@@ -48,6 +49,16 @@ public class DisciplinaDAO {
         }catch (Exception ex){
             Log.e("Erro","Erro ao excluir a disciplina: "+ex.getMessage());
             return false;
+        }
+    }
+
+    public static Disciplina retornaPorNome(String nome) {
+        try {
+            List<Disciplina> lista = Disciplina.find(Disciplina.class, "nome = ?", new String[]{String.valueOf(nome)}, "", "", "");
+            return lista.get(0);
+        } catch (Exception ex) {
+            Log.e("Erro", "Erro ao retornar Disciplina com o nome ("+nome+"): " + ex.getMessage());
+            return null;
         }
     }
 }

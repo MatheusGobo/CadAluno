@@ -43,7 +43,7 @@ public class Turma extends SugarRecord {
     }
 
     public void setDisciplina(String disciplina) {
-        disciplina = disciplina;
+        this.disciplina = disciplina;
     }
 
     public String getNome() {
@@ -67,11 +67,19 @@ public class Turma extends SugarRecord {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Turma turma = (Turma) o;
-        return nome.equals(turma.nome);
+        return nome == turma.nome;
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(nome);
+    }
+
+    @Override
+    public String toString() {
+        return "Turma{" +
+                "nome='" + nome + '\'' +
+                ", disciplina ='" + disciplina + '\'' +
+                '}';
     }
 }

@@ -26,14 +26,10 @@
     <string name="selecioneProfessor">Selecione o Professor</string>
     <string name="professor">Professor</string>
     <string name="dtContratacao">Dt. Contratacao</string>
-<<<<<<< HEAD
     <string name="Aluno">Aluno</string>
     <string name="selecionealuno">Selecione o Aluno</string>
     <string name="nota">Nota</string>
     <string name="dtLancamento">Data Lancamento</string>
-    <string name="selecionRegime">Selecione o regime</string>
-    <string name="regime">Regime</string>
-=======
     <string name="title_activity_lista_turma">ListaTurmaActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -46,5 +42,5 @@
     <string name="regime">Regime</string>
     <string name="listaTurma">Lista de Turmas</string>
     <string name="selecioneRegime">Selecione o Regime</string>
->>>>>>> c44dbdd18910fd02ec117d23c5c373a6f7ce7f90
+    <string name="cadastroTurma">Cadastro de Turma</string>
 </resources>

@@ -20,7 +20,8 @@
                 android:label="@string/listaTurma"/>
         <activity
                 android:name=".CadastroTurmaActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/cadastroTurma"/>
         <activity
                 android:name=".CadastroDisciplinaActivity"
                 android:exported="true"/>
@@ -41,7 +42,7 @@
                 android:value="cadastro_aluno.db"/>
         <meta-data
                 android:name="VERSION"
-                android:value="1"/>
+                android:value="3"/>
         <meta-data
                 android:name="QUERY_LOG"
                 android:value="true"/>

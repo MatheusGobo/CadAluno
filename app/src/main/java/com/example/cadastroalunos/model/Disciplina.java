@@ -44,9 +44,6 @@ public class Disciplina extends SugarRecord {
 
     @Override
     public String toString() {
-        return "Disciplina{" +
-                "nome='" + nome + '\'' +
-                ", raProfessor='" + raProfessor + '\'' +
-                '}';
+        return nome;
     }
 }

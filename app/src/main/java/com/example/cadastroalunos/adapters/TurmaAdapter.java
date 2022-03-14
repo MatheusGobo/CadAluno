@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.cadastroalunos.R;
+import com.example.cadastroalunos.dao.DisciplinaDAO;
+import com.example.cadastroalunos.dao.ProfessorDAO;
 import com.example.cadastroalunos.model.Turma;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -40,6 +42,7 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.TurmaViewHol
         holder.edPeriodoTurma    .setText(turma.getPeriodo());
         holder.edDisciplinaTurma .setText(turma.getDisciplina());
         holder.edQtAlunosTurma   .setText(String.valueOf(turma.getQtAlunos()));
+        holder.edRegimeTurma     .setText(turma.getRegime());
     }
 
 
@@ -48,6 +51,7 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.TurmaViewHol
         TextInputEditText edDisciplinaTurma;
         TextInputEditText edPeriodoTurma;
         TextInputEditText edQtAlunosTurma;
+        TextInputEditText edRegimeTurma;
         public TurmaViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -55,6 +59,7 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.TurmaViewHol
             edDisciplinaTurma  = (TextInputEditText)itemView.findViewById(R.id.edDisciplinaTurma);
             edPeriodoTurma     = (TextInputEditText)itemView.findViewById(R.id.edPeriodoTurma);
             edQtAlunosTurma    = (TextInputEditText)itemView.findViewById(R.id.edQtAlunos);
+            edRegimeTurma      = (TextInputEditText)itemView.findViewById(R.id.edRegimeTurma);
         }
     }
 }
