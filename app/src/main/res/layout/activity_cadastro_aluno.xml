@@ -105,33 +105,17 @@
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
-    <!--Campo de Cursos-->
+    <!--Campo de Turma-->
     <fr.ganfra.materialspinner.MaterialSpinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:id="@+id/spCursos"
+            android:id="@+id/spTurma"
             app:ms_arrowColor="?attr/colorPrimary"
             app:ms_arrowSize="14dp"
-            app:ms_floatingLabelText="@string/cursos"
-            app:ms_hint="@string/selecioneCurso"
+            app:ms_floatingLabelText="@string/turma"
+            app:ms_hint="@string/selecioneTurma"
             app:ms_multiline="false"/>
-
-
-    <!--Campo de Periodos-->
-    <fr.ganfra.materialspinner.MaterialSpinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:id="@+id/spPeriodo"
-            app:ms_arrowColor="?attr/colorPrimary"
-            app:ms_arrowSize="14dp"
-            app:ms_floatingLabelText="@string/periodo"
-            app:ms_hint="@string/selecionePeriodo"
-            app:ms_multiline="false"/>
-
 </LinearLayout>

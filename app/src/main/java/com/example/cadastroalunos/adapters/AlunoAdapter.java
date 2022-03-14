@@ -1,13 +1,17 @@
 package com.example.cadastroalunos.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.cadastroalunos.R;
+import com.example.cadastroalunos.dao.TurmaDAO;
 import com.example.cadastroalunos.model.Aluno;
+import com.example.cadastroalunos.model.Turma;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
@@ -27,8 +31,7 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
         TextInputEditText edRaAluno;
         TextInputEditText edNomeAluno;
         TextInputEditText edCpfAluno;
-        TextInputEditText edCurso;
-        TextInputEditText edPeriodo;
+        TextInputEditText edTurma;
         TextInputEditText edDtMatricula;
         TextInputEditText edDtNascimento;
 
@@ -38,8 +41,7 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
             edRaAluno      = (TextInputEditText) itemView.findViewById(R.id.edRaAluno);
             edNomeAluno    = (TextInputEditText) itemView.findViewById(R.id.edNomeAluno);
             edCpfAluno     = (TextInputEditText) itemView.findViewById(R.id.edCpfAluno);
-            edCurso        = (TextInputEditText) itemView.findViewById(R.id.edCursoAluno);
-            edPeriodo      = (TextInputEditText) itemView.findViewById(R.id.edPeriodoAluno);
+            edTurma        = (TextInputEditText) itemView.findViewById(R.id.edTurma);
             edDtMatricula  = (TextInputEditText) itemView.findViewById(R.id.edDtMatricula);
             edDtNascimento = (TextInputEditText) itemView.findViewById(R.id.edDtNasc);
         }
@@ -62,8 +64,16 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
         holder.edRaAluno     .setText(String.valueOf(aluno.getRa()));
         holder.edCpfAluno    .setText(aluno.getCpf());
         holder.edNomeAluno   .setText(aluno.getNome());
-        holder.edCurso       .setText(aluno.getCurso());
-        holder.edPeriodo     .setText(aluno.getPeriodo());
+
+        Turma turma = TurmaDAO.retornaPorID(aluno.getId_turma());
+        holder.edTurma       .setText(turma.getNome());
+
+        /*todo Retirar depois*/
+        if (1 == 1) {
+            holder.edTurma.setTextColor(Color.RED);
+            //holder.edTurma.setdrawables
+        }
+
         holder.edDtMatricula .setText(aluno.getDtMatricula());
         holder.edDtNascimento.setText(aluno.getDtNasc());
 

@@ -11,8 +11,7 @@ public class Aluno extends SugarRecord {
     private String cpf;
     private String dtNasc;
     private String dtMatricula;
-    private String curso;
-    private String periodo;
+    private Long id_turma;
 
     public Aluno() {
     }
@@ -23,8 +22,6 @@ public class Aluno extends SugarRecord {
         this.cpf = cpf;
         this.dtNasc = dtNasc;
         this.dtMatricula = dtMatricula;
-        this.curso = curso;
-        this.periodo = periodo;
     }
 
     public int getRa() {
@@ -67,20 +64,12 @@ public class Aluno extends SugarRecord {
         this.dtMatricula = dtMatricula;
     }
 
-    public String getCurso() {
-        return curso;
+    public Long getId_turma() {
+        return id_turma;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
-    }
-
-    public String getPeriodo() {
-        return periodo;
-    }
-
-    public void setPeriodo(String periodo) {
-        this.periodo = periodo;
+    public void setId_turma(Long id_turma) {
+        this.id_turma = id_turma;
     }
 
     @Override

@@ -13,10 +13,6 @@
     <string name="salvar">Salvar</string>
     <string name="curso">Curso</string>
     <string name="addAluno">Adicionar Aluno</string>
-    <string name="cadastrar_disciplina">Cadastrar Disciplina</string>
-    <string name="cadastrar_professor">Cadastrar Professor</string>
-    <string name="cadastrar_turma">Cadastrar Turma</string>
-    <string name="cadastrar_aluno">Cadastrar Aluno</string>
     <string name="lancar_notas">Lançar Notas</string>
     <string name="lancar_frequencias">Lançar Frequencias</string>
     <string name="disciplina">Disciplina</string>
@@ -40,7 +36,18 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="regime">Regime</string>
-    <string name="listaTurma">Lista de Turmas</string>
     <string name="selecioneRegime">Selecione o Regime</string>
-    <string name="cadastroTurma">Cadastro de Turma</string>
+
+    <!--Cabeçalhos-->
+    <string name="cadastrar_disciplina">Cadastrar Disciplina</string>
+    <string name="cadastrar_professor">Cadastrar Professor</string>
+    <string name="cadastrar_turma">Cadastrar Turma</string>
+    <string name="cadastrar_aluno">Cadastrar Aluno</string>
+
+    <string name="listaTurma">Lista de Turmas</string>
+    <string name="listaDisciplina">Lista de Disciplinas</string>
+    <string name="listaProfessor">Lista de Professores</string>
+    <string name="listaAluno">Lista de Alunos</string>
+    <string name="selecioneTurma">Selecione a Turma</string>
+    <string name="statusAprovacao">Status de Aprovação</string>
 </resources>

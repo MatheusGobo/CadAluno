@@ -71,30 +71,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:padding="5dp">
-                <!--Campo de Curso-->
+                <!--Campo de Turma-->
                 <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/curso">
+                        android:hint="@string/turma">
                     <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/edCursoAluno"
-                            android:focusable="false"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <!--Campo de Período-->
-                <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/periodo"
-                        android:layout_marginLeft="5dp">
-                    <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/edPeriodoAluno"
+                            android:id="@+id/edTurma"
                             android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -129,6 +114,24 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/edDtNasc"
+                            android:focusable="false"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:id="@+id/lnAprovacao"
+                          android:padding="5dp">
+                <!--Campo de Status de Aprovação-->
+                <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/statusAprovacao">
+                    <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/edAprovacao"
                             android:focusable="false"/>
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>

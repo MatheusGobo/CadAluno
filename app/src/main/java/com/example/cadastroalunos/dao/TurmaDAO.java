@@ -3,6 +3,7 @@ package com.example.cadastroalunos.dao;
 import android.os.Build;
 import android.util.Log;
 import androidx.annotation.RequiresApi;
+import com.example.cadastroalunos.model.Professor;
 import com.example.cadastroalunos.model.Turma;
 
 import java.util.ArrayList;
@@ -48,6 +49,16 @@ public class TurmaDAO {
         }catch (Exception ex){
             Log.e("Erro","Erro ao excluir a turma: "+ex.getMessage());
             return false;
+        }
+    }
+
+    public static Turma retornaPorID(Long id) {
+        try {
+            List<Turma> lista = Turma.find(Turma.class, "id = ?", new String[]{String.valueOf(id)}, "", "", "");
+            return lista.get(0);
+        } catch (Exception ex) {
+            Log.e("Erro", "Erro ao retornar a turma ("+id+"): " + ex.getMessage());
+            return null;
         }
     }
 }

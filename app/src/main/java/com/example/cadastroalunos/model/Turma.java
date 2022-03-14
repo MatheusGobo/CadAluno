@@ -77,9 +77,6 @@ public class Turma extends SugarRecord {
 
     @Override
     public String toString() {
-        return "Turma{" +
-                "nome='" + nome + '\'' +
-                ", disciplina ='" + disciplina + '\'' +
-                '}';
+        return nome;
     }
 }

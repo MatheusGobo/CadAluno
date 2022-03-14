@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +25,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
 
     private RecyclerView rvListaAlunos;
     private LinearLayout lnLista;
+    private LinearLayout lnAprovacao;
+    private EditText edAprovacao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class ListaAlunoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_aluno);
 
         lnLista = findViewById(R.id.lnLista);
+        lnAprovacao = findViewById(R.id.lnAprovacao);
+        edAprovacao = findViewById(R.id.edAprovacao);
 
         atualizaListaAluno();
     }

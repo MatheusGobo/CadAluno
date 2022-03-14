@@ -21,22 +21,27 @@
         <activity
                 android:name=".CadastroTurmaActivity"
                 android:exported="true"
-                android:label="@string/cadastroTurma"/>
+                android:label="@string/cadastrar_turma"/>
         <activity
                 android:name=".CadastroDisciplinaActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/cadastrar_disciplina"/>
         <activity
                 android:name=".ListaProfessorActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/listaProfessor"/>
         <activity
                 android:name=".ListaAlunoActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/listaAluno"/>
         <activity
                 android:name=".ListaDisciplinaActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/listaDisciplina"/>
         <activity
                 android:name=".CadastroProfessorActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/cadastrar_professor"/>
         <meta-data
                 android:name="DATABASE"
                 android:value="cadastro_aluno.db"/>
@@ -51,7 +56,8 @@
                 android:value="com.example.cadastroalunos.model"/>
         <activity
                 android:name=".CadastroAlunoActivity"
-                android:exported="true"/>
+                android:exported="true"
+                android:label="@string/cadastrar_aluno"/>
         <activity
                 android:name=".MainActivity"
                 android:exported="true">
