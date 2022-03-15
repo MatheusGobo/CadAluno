@@ -79,6 +79,7 @@
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
             android:shadowRadius="@integer/material_motion_duration_medium_1"
+            android:onClick="cadastroFrequencia"
     />
 
 

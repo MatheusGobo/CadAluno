@@ -2,6 +2,7 @@ package com.example.cadastroalunos.dao;
 
 import android.util.Log;
 import com.example.cadastroalunos.model.Aluno;
+import com.example.cadastroalunos.model.Professor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,14 +39,22 @@ public class AlunoDAO {
         return list;
     }
 
-
-
     public static boolean delete (Aluno aluno) {
         try {
             return Aluno.delete(aluno);
         } catch (Exception ex) {
             Log.e("Erro", "Erro ao apagar aluno: " + ex.getMessage());
             return false;
+        }
+    }
+
+    public static Aluno retornaPorRA(int ra) {
+        try {
+            List<Aluno> lista = Aluno.find(Aluno.class, "ra = ?", new String[]{String.valueOf(ra)}, "", "", "");
+            return lista.get(0);
+        } catch (Exception ex) {
+            Log.e("Erro", "Erro ao retornar professor com RA ("+ra+"): " + ex.getMessage());
+            return null;
         }
     }
 

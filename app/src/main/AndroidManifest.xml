@@ -11,9 +11,13 @@
             android:supportsRtl="true"
             android:theme="@style/Theme.CadastroAlunos">
         <activity
+                android:name=".CadastroFrequenciaActivity"
+                android:exported="true"
+                android:label="@string/cadastrar_frequencia"/>
+        <activity
                 android:name=".CadastroNotas"
                 android:exported="true"
-        />
+                android:label="@string/cadastrar_nota"/>
         <activity
                 android:name=".ListaTurmaActivity"
                 android:exported="true"
@@ -42,6 +46,7 @@
                 android:name=".CadastroProfessorActivity"
                 android:exported="true"
                 android:label="@string/cadastrar_professor"/>
+
         <meta-data
                 android:name="DATABASE"
                 android:value="cadastro_aluno.db"/>
@@ -54,6 +59,7 @@
         <meta-data
                 android:name="DOMAIN_PACKAGE_NAME"
                 android:value="com.example.cadastroalunos.model"/>
+
         <activity
                 android:name=".CadastroAlunoActivity"
                 android:exported="true"
@@ -61,7 +67,6 @@
         <activity
                 android:name=".MainActivity"
                 android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

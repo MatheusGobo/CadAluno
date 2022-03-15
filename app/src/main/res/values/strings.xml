@@ -50,4 +50,7 @@
     <string name="listaAluno">Lista de Alunos</string>
     <string name="selecioneTurma">Selecione a Turma</string>
     <string name="statusAprovacao">Status de Aprovação</string>
+    <string name="cadastrar_frequencia">Lançar Frequência</string>
+    <string name="cadastrar_nota">Lançar Nota</string>
+    <string name="percentual_frequencia">Percentual de Frequência</string>
 </resources>

@@ -39,4 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+
+    public void cadastroFrequencia(View view) {
+        Intent intent = new Intent(this, CadastroFrequenciaActivity.class);
+
+        startActivity(intent);
+    }
 }

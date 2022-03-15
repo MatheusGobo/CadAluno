@@ -76,7 +76,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
     private void iniciaSpinners() {
         spTurma = findViewById(R.id.spTurma);
 
-        listTurma = TurmaDAO.retornaTurma("",new String[]{},"");
+        listTurma = TurmaDAO.retornaTurma("",new String[]{},"nome asc");
 
         ArrayAdapter adapterTurma = new ArrayAdapter(this, android.R.layout.simple_list_item_1, listTurma);
 
@@ -177,7 +177,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         aluno.setCpf(edCpfAluno.getText().toString());
         aluno.setDtNasc(edDtNasc.getText().toString());
         aluno.setDtMatricula(edDtMatricula.getText().toString());
-        aluno.setId_turma(turmaSelecionada.getId());
+        aluno.setId_turma(String.valueOf(turmaSelecionada.getId()));
 
         if (AlunoDAO.salvar(aluno) > 0) {
             setResult(RESULT_OK);
@@ -200,7 +200,7 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.mn_limpar:
 
-                limparCampor();
+                limparCampos();
 
                 return true;
             case R.id.mn_save:
@@ -213,13 +213,12 @@ public class CadastroAlunoActivity extends AppCompatActivity {
         }
     }
 
-    private void limparCampor() {
+    private void limparCampos() {
         edRaAluno.setText("");
         edNomeAluno.setText("");
         edCpfAluno.setText("");
         edDtNasc.setText("");
         edDtMatricula.setText("");
-
     }
 
     public void selecionarData(View view) {
