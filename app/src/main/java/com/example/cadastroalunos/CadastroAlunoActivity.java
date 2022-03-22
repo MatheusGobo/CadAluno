@@ -167,6 +167,14 @@ public class CadastroAlunoActivity extends AppCompatActivity {
             return;
         }
 
+        //Valida Turma
+        if (turmaSelecionada.getId() <= 0) {
+            spTurma.setError("Informe a Turma do Aluno");
+            spTurma.requestFocus();
+
+            return;
+        }
+
         salvarAluno();
     }
 

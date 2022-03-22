@@ -65,7 +65,7 @@ public class AlunoAdapter extends RecyclerView.Adapter<AlunoAdapter.AlunoViewHol
         holder.edCpfAluno    .setText(aluno.getCpf());
         holder.edNomeAluno   .setText(aluno.getNome());
 
-        Turma turma = TurmaDAO.retornaPorID(Long.parseLong(aluno.getId_turma()));
+        Turma turma = TurmaDAO.retornaPorID(Long.parseLong(aluno.getIdTurma()));
         holder.edTurma       .setText(turma.getNome());
 
         /*todo Retirar depois*/

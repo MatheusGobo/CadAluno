@@ -8,18 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.cadastroalunos.dao.AlunoDAO;
-import com.example.cadastroalunos.dao.DisciplinaDAO;
 import com.example.cadastroalunos.dao.TurmaDAO;
 import com.example.cadastroalunos.model.Aluno;
-import com.example.cadastroalunos.model.Disciplina;
 import com.example.cadastroalunos.model.Frequencia;
 import com.example.cadastroalunos.model.Turma;
-import com.example.cadastroalunos.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
 import fr.ganfra.materialspinner.MaterialSpinner;
 
@@ -86,7 +82,7 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
         if (turmaSelecionada.getId() == null) {
             listaAluno = AlunoDAO.retornaAlunos("", new String[]{}, "nome asc");
         }else {
-            listaAluno = AlunoDAO.retornaAlunos("idTurma = ?", new String[]{String.valueOf(turmaSelecionada.getId())}, "nome asc");
+            listaAluno = AlunoDAO.retornaAlunos("id_turma = ?", new String[]{String.valueOf(turmaSelecionada.getId())}, "nome asc");
         }
 
         nomes = new String[listaAluno.size()];
@@ -130,7 +126,7 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
                 return true;
             case R.id.mn_save:
 
-                //validaCampos();
+                validaCampos();
 
                 return true;
             default:
@@ -143,9 +139,40 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
         edPcFrequencia.setText("");
         edNomeAluno.setText("");
     }
+
+    private void validaCampos(){
+        //Valida Turma
+        if (turmaSelecionada.getId() <= 0) {
+            spTurma.setError("Informe a Turma do Aluno");
+            spTurma.requestFocus();
+
+            return;
+        }
+
+        if (String.valueOf(raAlunoSelecionado).isEmpty()) {
+            edNomeAluno.setError("Informe o Aluno");
+            edNomeAluno.requestFocus();
+
+            return;
+        }
+
+        //Valida o campo de Frequencia
+        if (edPcFrequencia.getText().toString().isEmpty()) {
+            edPcFrequencia.setError("Informe o Percentual de frequência");
+            edPcFrequencia.requestFocus();
+
+            return;
+        }else if(Integer.parseInt(edPcFrequencia.getText().toString()) > 100) {
+return;
+        }
+
+        //salvarFrequencia();
+    }
+
 /*
     public void salvarFrequencia() {
         Frequencia frequencia = new Frequencia();
+
         Aluno aluno = new Aluno();
         aluno = AlunoDAO.retornaPorRA(raAlunoSelecionado);
         frequencia.setIdAluno(aluno.getId());

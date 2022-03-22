@@ -2,7 +2,6 @@ package com.example.cadastroalunos.dao;
 
 import android.util.Log;
 import com.example.cadastroalunos.model.Aluno;
-import com.example.cadastroalunos.model.Professor;
 
 import java.util.ArrayList;
 import java.util.List;
