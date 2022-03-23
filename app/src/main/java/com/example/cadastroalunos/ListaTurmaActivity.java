@@ -12,7 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.cadastroalunos.adapters.TurmaAdapter;
+import com.example.cadastroalunos.dao.AlunoDAO;
 import com.example.cadastroalunos.dao.TurmaDAO;
+import com.example.cadastroalunos.model.Aluno;
 import com.example.cadastroalunos.model.Turma;
 import com.example.cadastroalunos.util.Util;
 
@@ -42,6 +44,10 @@ public class ListaTurmaActivity extends AppCompatActivity {
         listaTurma = TurmaDAO.retornaTurma("", new String[]{}, "nome asc");
 
         rvListaTurma = (RecyclerView) findViewById(R.id.rvListaTurma);
+        for (int i = 0; i < listaTurma.size();i++) {
+            int qtAlunos = AlunoDAO.retornaQtTurma(Integer.parseInt(String.valueOf(listaTurma.get(i).getId())));
+            listaTurma.get(i).setQtAlunos(qtAlunos);
+        }
 
         TurmaAdapter adapter = new TurmaAdapter(listaTurma, this);
 

@@ -30,7 +30,6 @@ public class CadastroTurmaActivity extends AppCompatActivity {
     private TextInputEditText edDisciplinaTurma;
     private TextInputEditText edPeriodoTurma;
     private TextInputEditText edRegimeTurma;
-    private TextInputEditText edQtAlunos;
     private MaterialSpinner   spRegime;
     private MaterialSpinner   spDisciplina;
     private MaterialSpinner   spPeriodo;
@@ -49,7 +48,6 @@ public class CadastroTurmaActivity extends AppCompatActivity {
         edDisciplinaTurma = findViewById(R.id.edDisciplinaTurma);
         edPeriodoTurma    = findViewById(R.id.edPeriodoTurma);
         edRegimeTurma     = findViewById(R.id.edRegimeTurma);
-        edQtAlunos        = findViewById(R.id.edQtAlunos);
 
         lnPrincipal = findViewById(R.id.lnPrincipal);
 
@@ -123,7 +121,6 @@ public class CadastroTurmaActivity extends AppCompatActivity {
 
     private void limparCampos() {
         edNomeTurma.setText("");
-        edQtAlunos.setText("");
         spPeriodo.setSelection(0);
         spDisciplina.setSelection(0);
         spRegime.setSelection(0);
@@ -157,13 +154,6 @@ public class CadastroTurmaActivity extends AppCompatActivity {
 
             return;
         }
-
-        if (edQtAlunos.getText().toString().isEmpty()) {
-            edQtAlunos.setError("Informe a quantidade de Alunos na Turma");
-            edQtAlunos.requestFocus();
-
-            return;
-        }
         salvarTurma();
     }
 
@@ -171,7 +161,6 @@ public class CadastroTurmaActivity extends AppCompatActivity {
         Turma turma = new Turma();
         turma.setNome(edNomeTurma.getText().toString());
         turma.setPeriodo(spPeriodo.getSelectedItem().toString());
-        turma.setQtAlunos(Integer.parseInt(edQtAlunos.getText().toString()));
         turma.setRegime(spRegime.getSelectedItem().toString());
         turma.setDisciplina(disciplinaSelecionada.getNome());
 

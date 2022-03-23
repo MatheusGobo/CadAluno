@@ -36,6 +36,7 @@ public class TurmaDAO {
         List<Turma> list = new ArrayList<>();
         try {
             list = Turma.find(Turma.class,where,whereArgs,"",orderBy,"");
+
         }catch (Exception ex){
             Log.e("Erro", "Erro ao buscar as turmas: "+ex.getMessage());
         }

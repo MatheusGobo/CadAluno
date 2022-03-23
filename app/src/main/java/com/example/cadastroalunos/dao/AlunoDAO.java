@@ -1,5 +1,7 @@
 package com.example.cadastroalunos.dao;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import com.example.cadastroalunos.model.Aluno;
 
@@ -54,6 +56,16 @@ public class AlunoDAO {
         } catch (Exception ex) {
             Log.e("Erro", "Erro ao retornar professor com RA ("+ra+"): " + ex.getMessage());
             return null;
+        }
+    }
+
+    public static int retornaQtTurma(int idTurma){
+        try {
+            List<Aluno> lista = Aluno.find(Aluno.class, "id_turma = ?", new String[]{String.valueOf(idTurma)}, "", "", "");
+            return lista.size();
+        } catch (Exception ex) {
+            Log.e("Erro", "Erro ao retornar professor com RA ("+idTurma+"): " + ex.getMessage());
+            return 0;
         }
     }
 
