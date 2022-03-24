@@ -1,5 +1,6 @@
 package com.example.cadastroalunos;
 
+
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -14,9 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.cadastroalunos.dao.AlunoDAO;
 import com.example.cadastroalunos.dao.FrequenciaDAO;
+import com.example.cadastroalunos.dao.NotaDAO;
 import com.example.cadastroalunos.dao.TurmaDAO;
 import com.example.cadastroalunos.model.Aluno;
 import com.example.cadastroalunos.model.Frequencia;
+import com.example.cadastroalunos.model.Nota;
 import com.example.cadastroalunos.model.Turma;
 import com.example.cadastroalunos.util.Util;
 import com.google.android.material.textfield.TextInputEditText;
@@ -25,11 +28,11 @@ import fr.ganfra.materialspinner.MaterialSpinner;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CadastroFrequenciaActivity extends AppCompatActivity {
+public class CadastroNotaActivity extends AppCompatActivity {
 
     private MaterialSpinner spTurma;
-    private AutoCompleteTextView edNomeAluno;
-    private TextInputEditText edPcFrequencia;
+    private AutoCompleteTextView edAluno;
+    private TextInputEditText edNotaAluno;
     private LinearLayout lnPrincipal;
 
     List<Turma> listTurma = new ArrayList<>();
@@ -39,17 +42,16 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
     Turma turmaSelecionada = new Turma();
     int raAlunoSelecionado;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro_frequencia);
+        setContentView(R.layout.activity_cadastro_notas);
 
         lnPrincipal = findViewById(R.id.lnPrincipal);
-        edNomeAluno = findViewById(R.id.edNomeAluno);
-        edNomeAluno.setVisibility(View.GONE);
+        edAluno = findViewById(R.id.edAluno);
+        edAluno.setVisibility(View.GONE);
 
-        edPcFrequencia = findViewById(R.id.edPcFrequencia);
+        edNotaAluno = findViewById(R.id.edNotaAluno);
 
         iniciaSpinners();
         iniciaListaAlunos();
@@ -68,10 +70,10 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position < 0) {
                     turmaSelecionada = new Turma();
-                    edNomeAluno.setVisibility(View.GONE);
+                    edAluno.setVisibility(View.GONE);
                 } else {
                     turmaSelecionada = listTurma.get((int) (id) - 1);
-                    edNomeAluno.setVisibility(View.VISIBLE);
+                    edAluno.setVisibility(View.VISIBLE);
                     atualizaSelect();
                 }
             }
@@ -97,13 +99,13 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
         }
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, nomes);
-        edNomeAluno.setAdapter(adapter);
+        edAluno.setAdapter(adapter);
 
     }
 
     private void iniciaListaAlunos() {
         atualizaSelect();
-        edNomeAluno.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        edAluno.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
@@ -141,8 +143,8 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
 
     private void limparCampos() {
         spTurma.setSelection(0);
-        edPcFrequencia.setText("");
-        edNomeAluno.setText("");
+        edAluno.setText("");
+        edNotaAluno.setText("");
     }
 
     private void validaCampos() {
@@ -166,22 +168,22 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
             Log.e("Frequencia", "Erro ao buscar a turma selecionada");
         }
         try {
-            if (edNomeAluno.getText().toString().isEmpty()) {
-                edNomeAluno.setError("Informe o Aluno");
-                edNomeAluno.requestFocus();
+            if (edAluno.getText().toString().isEmpty()) {
+                edAluno.setError("Informe o Aluno");
+                edAluno.requestFocus();
 
                 return;
             } else {
                 raAlunoSelecionado = 0;
 
-                String textCampoAluno = edNomeAluno.getText().toString();
+                String textCampoAluno = edAluno.getText().toString();
                 raAlunoSelecionado = Integer.parseInt(textCampoAluno.substring(textCampoAluno.indexOf("RA: ") + 4, textCampoAluno.length()));
 
                 Aluno aluno = AlunoDAO.retornaPorRA(raAlunoSelecionado);
 
                 if (aluno == null) {
-                    edNomeAluno.setError("Não encontrado Aluno com RA (" + raAlunoSelecionado + "), Verifique !");
-                    edNomeAluno.requestFocus();
+                    edAluno.setError("Não encontrado Aluno com RA (" + raAlunoSelecionado + "), Verifique !");
+                    edAluno.requestFocus();
 
                     return;
                 }
@@ -191,21 +193,21 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
         }
 
         if (raAlunoSelecionado == 0) {
-            edNomeAluno.setError("Informe o Aluno");
-            edNomeAluno.requestFocus();
+            edAluno.setError("Informe o Aluno");
+            edAluno.requestFocus();
 
             return;
         }
 
         //Valida o campo de Frequencia
-        if (edPcFrequencia.getText().toString().isEmpty()) {
-            edPcFrequencia.setError("Informe o Percentual de frequência");
-            edPcFrequencia.requestFocus();
+        if (edNotaAluno.getText().toString().isEmpty()) {
+            edNotaAluno.setError("Informe a Nota");
+            edNotaAluno.requestFocus();
 
             return;
-        } else if (Integer.parseInt(edPcFrequencia.getText().toString()) > 100) {
-            edPcFrequencia.setError("O percentual de ferquência não pode ser maior que 100");
-            edPcFrequencia.requestFocus();
+        } else if (Integer.parseInt(edNotaAluno.getText().toString()) > 100) {
+            edNotaAluno.setError("A nota não pode ser maior que 100");
+            edNotaAluno.requestFocus();
 
             return;
         }
@@ -219,27 +221,38 @@ public class CadastroFrequenciaActivity extends AppCompatActivity {
         Aluno alunoSalvar = new Aluno();
         alunoSalvar = AlunoDAO.retornaPorRA(raAlunoSelecionado);
 
-        List<Frequencia> freqExist = FrequenciaDAO.retornaFrequencia("id_aluno = ? and id_turma = ?", new String[]{String.valueOf(alunoSalvar.getId()),
-                String.valueOf(turmaSelecionada.getId())}, "");
-        if (freqExist.size() > 0) {
-            edNomeAluno.setError("Já existe lançamento de frequência para o aluno");
-            edNomeAluno.requestFocus();
+        List<Nota> notaExist = NotaDAO.retornaNota("id_aluno = ? and id_turma = ?", new String[]{String.valueOf(alunoSalvar.getId()),
+                                                                                                                         String.valueOf(turmaSelecionada.getId())}, "");
 
-            return;
+        if (turmaSelecionada.getRegime().toUpperCase().equals("ANUAL")) {
+            if (notaExist.size() >= 4) {
+                edAluno.setError("Todas as notas para o aluno já foram lançadas");
+                edAluno.requestFocus();
+
+                return;
+            }
+        } else {
+            if (notaExist.size() >= 2) {
+                edAluno.setError("Todas as notas para o aluno já foram lançadas");
+                edAluno.requestFocus();
+
+                return;
+            }
         }
 
-        Frequencia frequencia = new Frequencia();
+        Nota nota = new Nota();
 
-        frequencia.setIdAluno(alunoSalvar.getId());
-        frequencia.setIdTurma(turmaSelecionada.getId());
-        frequencia.setPcFrequencia(Integer.parseInt(edPcFrequencia.getText().toString()));
+        nota.setIdAluno(alunoSalvar.getId());
+        nota.setIdTurma(turmaSelecionada.getId());
+        nota.setnota(Integer.parseInt(edNotaAluno.getText().toString()));
 
-        if (FrequenciaDAO.salvar(frequencia) > 0) {
+        if (NotaDAO.salvar(nota) > 0) {
             setResult(RESULT_OK);
             finish();
-            Util.customSnakeBar(lnPrincipal, "Frequência lançada com sucesso", 1);
+            Util.customSnakeBar(lnPrincipal, "Nota lançada com sucesso", 1);
         } else {
-            Util.customSnakeBar(lnPrincipal, "Erro ao salvar a frequência, verifique o log", 0);
+            Util.customSnakeBar(lnPrincipal, "Erro ao salvar a nota, verifique o log", 0);
         }
     }
+
 }

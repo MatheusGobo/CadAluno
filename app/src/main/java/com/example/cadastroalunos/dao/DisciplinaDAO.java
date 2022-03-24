@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.cadastroalunos.model.Disciplina;
-import com.example.cadastroalunos.model.Professor;
 
 public class DisciplinaDAO {
     public static long salvar(Disciplina disciplina){

@@ -44,10 +44,6 @@ public class ListaTurmaActivity extends AppCompatActivity {
         listaTurma = TurmaDAO.retornaTurma("", new String[]{}, "nome asc");
 
         rvListaTurma = (RecyclerView) findViewById(R.id.rvListaTurma);
-        for (int i = 0; i < listaTurma.size();i++) {
-            int qtAlunos = AlunoDAO.retornaQtTurma(Integer.parseInt(String.valueOf(listaTurma.get(i).getId())));
-            listaTurma.get(i).setQtAlunos(qtAlunos);
-        }
 
         TurmaAdapter adapter = new TurmaAdapter(listaTurma, this);
 

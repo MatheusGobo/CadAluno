@@ -15,7 +15,7 @@
                 android:exported="true"
                 android:label="@string/cadastrar_frequencia"/>
         <activity
-                android:name=".CadastroNotas"
+                android:name=".CadastroNotaActivity"
                 android:exported="true"
                 android:label="@string/cadastrar_nota"/>
         <activity
@@ -52,7 +52,7 @@
                 android:value="cadastro_aluno.db"/>
         <meta-data
                 android:name="VERSION"
-                android:value="5"/>
+                android:value="6"/>
         <meta-data
                 android:name="QUERY_LOG"
                 android:value="true"/>

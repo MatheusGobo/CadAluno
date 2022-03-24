@@ -5,29 +5,32 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".CadastroNotas"
+        tools:context=".CadastroNotaActivity"
         android:orientation="vertical"
-        android:id="@+id/cadastroNotas"
->
+        android:id="@+id/lnPrincipal">
 
-        <AutoCompleteTextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:hint="@string/ra"
-                android:id="@+id/edRaAluno"/>
+    <!--Campo de Turma-->
+    <fr.ganfra.materialspinner.MaterialSpinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:id="@+id/spTurma"
+            app:ms_arrowColor="?attr/colorPrimary"
+            app:ms_arrowSize="14dp"
+            app:ms_floatingLabelText="@string/turma"
+            app:ms_hint="@string/selecioneTurma"
+            app:ms_multiline="false"/>
 
-        <AutoCompleteTextView
+    <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:hint="@string/Aluno"
-            android:id="@+id/edNomeAluno"/>
-
+            android:id="@+id/edAluno"/>
 
     <!--Campo Nota-->
     <com.google.android.material.textfield.TextInputLayout
@@ -41,12 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/edNotaAluno"
-                android:inputType="numberDecimal"/>
+                android:inputType="number"
+                android:maxLength="3"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-
-
-
 
 
 </LinearLayout>

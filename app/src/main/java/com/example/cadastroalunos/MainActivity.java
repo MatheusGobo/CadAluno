@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void cadastroNotas(View view){
-        Intent intent = new Intent(this, CadastroNotas.class);
+        Intent intent = new Intent(this, CadastroNotaActivity.class);
         startActivity(intent);
     }
     public void cadastroTurma(View view){

@@ -4,7 +4,6 @@ import android.os.Build;
 import android.util.Log;
 import androidx.annotation.RequiresApi;
 import com.example.cadastroalunos.model.Frequencia;
-import com.example.cadastroalunos.model.Turma;
 
 import java.util.ArrayList;
 import java.util.List;

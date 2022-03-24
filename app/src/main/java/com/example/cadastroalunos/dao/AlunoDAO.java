@@ -1,7 +1,5 @@
 package com.example.cadastroalunos.dao;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import com.example.cadastroalunos.model.Aluno;
 

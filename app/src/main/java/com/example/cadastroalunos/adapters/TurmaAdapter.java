@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.cadastroalunos.R;
+import com.example.cadastroalunos.dao.AlunoDAO;
 import com.example.cadastroalunos.dao.DisciplinaDAO;
 import com.example.cadastroalunos.dao.ProfessorDAO;
+import com.example.cadastroalunos.dao.TurmaDAO;
 import com.example.cadastroalunos.model.Turma;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -41,7 +43,10 @@ public class TurmaAdapter extends RecyclerView.Adapter<TurmaAdapter.TurmaViewHol
         holder.edNomeTurma       .setText(turma.getNome());
         holder.edPeriodoTurma    .setText(turma.getPeriodo());
         holder.edDisciplinaTurma .setText(turma.getDisciplina());
-        holder.edQtAlunosTurma   .setText(String.valueOf(turma.getQtAlunos()));
+
+        int quantTurma = AlunoDAO.retornaAlunos("id_turma = ?", new String[]{String.valueOf(turma.getId())}, "").size();
+
+        holder.edQtAlunosTurma   .setText(String.valueOf(quantTurma));
         holder.edRegimeTurma     .setText(turma.getRegime());
     }
 

@@ -6,7 +6,6 @@ import java.util.Objects;
 
 public class Turma extends SugarRecord {
     private String   periodo;
-    private int      qtAlunos;
     private String   disciplina;
     private String   nome;
     private String   regime;
@@ -14,9 +13,8 @@ public class Turma extends SugarRecord {
     public Turma() {
     }
 
-    public Turma(String periodo, int qtAlunos, String disciplina, String nome, String regime) {
+    public Turma(String periodo, String disciplina, String nome, String regime) {
         this.periodo = periodo;
-        this.qtAlunos = qtAlunos;
         this.disciplina = disciplina;
         this.nome = nome;
         this.regime = regime;
@@ -28,14 +26,6 @@ public class Turma extends SugarRecord {
 
     public void setPeriodo(String periodo) {
         this.periodo = periodo;
-    }
-
-    public int getQtAlunos() {
-        return qtAlunos;
-    }
-
-    public void setQtAlunos(int qtAlunos) {
-        this.qtAlunos = qtAlunos;
     }
 
     public String getDisciplina() {
