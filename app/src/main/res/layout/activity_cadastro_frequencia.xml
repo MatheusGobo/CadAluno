@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".CadastroFrequenciaActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/lnPrincipal">
 
     <!--Campo de Turma-->
     <fr.ganfra.materialspinner.MaterialSpinner
